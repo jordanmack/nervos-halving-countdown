@@ -2,7 +2,14 @@
 
 This is a basic countdown page for the next mining reward halving on Nervos CKB Layer 1 blockchain.
 
+You can view a live version of this site at [NervosHalving.com](https://nervoshalving.com/)
+
 Note: This project is currently of proof of concept quality and is not intended for long term use.
+
+Developing
+These instructions describe how to launch, run, and develop using the CKB.tools code base.
+
+If you don't need to develop and just want to use the tools, visit the CKB.tools website.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
