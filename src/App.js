@@ -84,7 +84,7 @@ function App()
 				</p>
 				<p>
 					<small>
-						{targetEpoch ? 'The next halving is epoch '+targetEpoch+', estimated to be created on '+(new Date(targetTime)).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"long", day:"numeric"})+'.' : ''}
+						{targetEpoch ? 'The next halving is epoch '+targetEpoch+', estimated to be reached on '+(new Date(targetTime)).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"long", day:"numeric"})+'.' : ''}
 					</small>
 				</p>
 			</header>

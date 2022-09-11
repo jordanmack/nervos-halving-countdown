@@ -2,7 +2,7 @@
 
 This is a basic countdown page for the next mining reward halving on Nervos CKB Layer 1 blockchain.
 
-You can view a live version of this site at [NervosHalving.com](https://nervoshalving.com/)
+You can view a live version of this site at [NervosHalving.com](https://nervoshalving.com/).
 
 Note: This project is currently of proof of concept quality and is not intended for long term use.
 
