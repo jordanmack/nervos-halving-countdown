@@ -233,7 +233,7 @@ function App()
 				<br />
 				Made by the Nervos Community in collaboration with <a href="https://dotmatrix.im/" target="_blank" rel="noreferrer">DotMatrix</a>.
 				{" "}
-				<a href="https://github.com/jordanmack/nervos-halving-countdown">Source available on GitHub.</a>
+				Source available on <a href="https://github.com/jordanmack/nervos-halving-countdown" target="_blank" rel="noreferrer">GitHub</a>.
 			</footer>
 		</div>
 	);
