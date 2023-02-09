@@ -20,6 +20,10 @@ const FULL_REFRESH_DELAY = 5 * 60 * 1000;			// The delay in milliseconds to refr
  */
 function calculateTimeString(timeFromNow: number)
 {
+	// If the time has passed, display a message instead of a time.
+	if(timeFromNow < 1)
+		return 'Happy Halving! 🎈🎉🎈🍾';
+
 	// Time constants (in milliseconds).
 	const second = 1000;
 	const minute = second * 60;
