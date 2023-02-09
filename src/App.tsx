@@ -47,7 +47,8 @@ function calculateTimeString(timeFromNow: number)
 	if(days > 0) { string += days+' day'+(days>1?'s':'')+', '; }
 	if(hours > 0) { string += hours+' hour'+(hours>1?'s':'')+', '; }
 	if(minutes > 0) { string += minutes+' minute'+(minutes>1?'s':'')+', '; }
-	string += ' and '+seconds+' second'+(seconds!==1?'s':'')+'. ';
+	if(minutes > 0) { string += ' and '+seconds+' second'+(seconds!==1?'s':'')+'. '; }
+	else { string += ' '+seconds+' second'+(seconds!==1?'s':'')+' '; }
 
 	return string;
 }
