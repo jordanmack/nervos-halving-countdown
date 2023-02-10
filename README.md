@@ -2,7 +2,7 @@
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/jordanmack/nervos-halving-countdown)
 ![GitHub last commit](https://img.shields.io/github/last-commit/jordanmack/nervos-halving-countdown)
-![Travis (.org)](https://img.shields.io/travis/jordanmack/nervos-halving-countdown)
+![CircleCI](https://img.shields.io/circleci/build/github/jordanmack/nervos-halving-countdown)
 ![Libaries.io](https://img.shields.io/librariesio/release/github/jordanmack/nervos-halving-countdown)
 ![Uptime Robot status](https://img.shields.io/uptimerobot/status/m793677881-0e832575c93c534efd4ec20e)
 ![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m793677881-0e832575c93c534efd4ec20e)
