@@ -1,35 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Roboto&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base
 {
-    body
+	body
 	{
-		@apply bg-zinc-700 text-zinc-100;
+		@apply bg-black text-zinc-100 leading-relaxed min-w-[375px];
+		font-family: 'Kumbh Sans', sans-serif;
+		@media (max-width: 767px)
+		{
+			background: url("../public/background-mobile.jpg") center top repeat-y;
+			background-size: 100%;
+		}
+		@media (min-width: 768px)
+		{
+			background: url("../public/background.jpg") center -600px no-repeat;
+			background-size: 8100px;
+		}
 	}
-    h1
-    {
-        @apply text-4xl;
-    }
-    h2
-    {
-        @apply text-2xl;
-    }
-    h3
-    {
-        @apply text-xl;
-    }
-    p
-    {
-        @apply mb-4;
-    }
-    a
-    {
-        @apply underline;
-    }
-    footer a
-    {
-        // @apply no-underline;
-    }
+	h1
+	{
+		@apply text-3xl md:text-4xl text-teal-400 mb-8;
+		font-family: 'Roboto', sans-serif;
+	}
+	h2
+	{
+		@apply text-2xl text-teal-400 mb-8;
+		font-family: 'Roboto', sans-serif;
+	}
+	h3
+	{
+		@apply text-xl text-teal-400 mb-8;
+		font-family: 'Roboto', sans-serif;
+	}
+	p
+	{
+		@apply mb-4 text-justify md:text-left;
+	}
+	a
+	{
+		@apply underline;
+	}
 }
