@@ -8,16 +8,16 @@
 {
 	body
 	{
-		@apply bg-black text-zinc-100 leading-relaxed min-w-[375px];
+		@apply text-zinc-100 leading-relaxed min-w-[375px];
 		font-family: 'Kumbh Sans', sans-serif;
 		@media (max-width: 767px)
 		{
-			background: url("../public/background-mobile.jpg") center top repeat-y;
+			background: black url("../public/background-mobile.jpg") center top repeat-y;
 			background-size: 100%;
 		}
 		@media (min-width: 768px)
 		{
-			background: url("../public/background.jpg") center -600px no-repeat;
+			background: black url("../public/background.jpg") center -600px no-repeat;
 			background-size: 8100px;
 		}
 	}
