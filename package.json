@@ -1,6 +1,6 @@
 {
   "name": "nervos-halving-countdown",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "dependencies": {
     "@types/node": "^18.11.19",
