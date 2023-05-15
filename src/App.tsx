@@ -86,12 +86,11 @@ function renderStatsBox(label: string, metric: string|null, metricSm: string|nul
 }
 
 /**
- * Sets the target string depending on the target epoch and target time.
- * @param setTargetString A React function to set the target string.
+ * Generate the target date string depending on the target epoch and target time.
  * @param targetEpoch The epoch of the next halving.
  * @param targetTime The approximate time of the next halving.
  */
-function updateTargetString(setTargetString: React.Dispatch<React.SetStateAction<string>>, targetEpoch: number, targetTime: number)
+function generateTargetString(targetEpoch: number, targetTime: number)
 {
 	// Set the default string to nbsp to ensure the line is always normal height.
 	let string = ' ';
@@ -103,15 +102,14 @@ function updateTargetString(setTargetString: React.Dispatch<React.SetStateAction
 		string = `The next halving is estimated to be reached on ${date.replaceAll(' ', ' ')}.`;
 	}
 
-	setTargetString(string);
+	return string;
 }
 
 /**
- * Update the countdown with the time string.
- * @param setCountdown A React function to set the countdown string.
+ * Render the countdown with populated counter circles.
  * @param targetTime The approximate time of the next halving.
  */
-function updateCountdown(setCountdown: React.Dispatch<React.SetStateAction<JSX.Element>>, targetTime: number)
+function renderCountdown(targetTime: number)
 {
 	if(targetTime)
 	{
@@ -131,12 +129,17 @@ function updateCountdown(setCountdown: React.Dispatch<React.SetStateAction<JSX.E
 					{renderCounterCircle(timeValues.seconds, "seconds")}
 				</div>
 			);
-			setCountdown(html);
+			return html;
 		}
 		// If the time has passed, display a message instead of a time.
 		else
-			setCountdown(<div id="countdown" className="text-4xl leading-[1.5em] md:text-6xl md:leading-[1.5em]">🎈Happy Halving!🎈<br />🎉🍾🎉🍾🎉</div>);
+		{
+			const html = <div id="countdown" className="text-4xl leading-[1.5em] md:text-6xl md:leading-[1.5em]">🎈Happy Halving!🎈<br />🎉🍾🎉🍾🎉</div>;
+			return html;
+		}
 	}
+
+	return <div id="countdown" className="loading">&nbsp;</div>;
 }
 
 /**
@@ -219,8 +222,8 @@ function App()
 	// Update the countdown at the specified tick interval.
 	useInterval(()=>
 	{
-		updateCountdown(setCountdown, targetTime);
-		updateTargetString(setTargetString, targetEpoch, targetTime);
+		setCountdown(renderCountdown(targetTime));
+		setTargetString(generateTargetString(targetEpoch, targetTime));
 	}, TICK_DELAY);
 
 	const html =
