@@ -17,8 +17,8 @@
 		}
 		@media (min-width: 768px)
 		{
-			background: black url("../public/background.jpg") center -600px no-repeat;
-			background-size: 8100px;
+			background: black url("../public/background.jpg") calc(50% - 30px) -300px no-repeat;
+			background-size: 6400px;
 		}
 	}
 	h1
