@@ -254,7 +254,7 @@ function App()
 						In the Nervos ecosystem, mining is used to secure the network and distribute tokens in the form of block rewards. A total of 33.6 billion CKB tokens will be created through primary issuance over a period of approximately 84 years to incentivize the miners that secure the network.
 					</p>
 					<p>
-						Every epoch, a period of approximately four hours, a fixed amount of 1,917,808 CKB is introduced. Every 8,760 epochs, a period of approximately four years, this amount is cut in half. This event is called a halving and it is the point where the mining rewards from primary issuance are permanently reduced by 50%. This halving process will continue every four years until the year 2103, after which point all block rewards from primary issuance will cease completely.
+						Every epoch, a period of approximately four hours, a fixed amount of CKB is introduced. Every 8,760 epochs, a period of approximately four years, this amount is cut in half. This event is called a halving and it is the point where the mining rewards from primary issuance are permanently reduced by 50%. This halving process will continue every four years until the year 2103, after which point all block rewards from primary issuance will cease completely.
 					</p>
 					<p className="pt-8 text-center">
 						<a className="md:opacity-50 transition-opacity duration-500 hover:opacity-100" href="https://docs.nervos.org/docs/reference/halving/" target="_blank" rel="noreferrer"><img className="w-full max-w-lg inline" src="nervos-halving-table.png" alt="Nervos Halving Table" /></a>
@@ -278,7 +278,7 @@ function App()
 						A general rule of thumb in economic theory states that steady demand with decreasing supply results in higher pricing. Bitcoin enthusiasts often use the stock-to-flow model as a way to measure the total amount of existing Bitcoin (stock) relative to the amount of Bitcoin produced per year (flow).
 					</p>
 					<p>
-						This stock-to-flow model predicts that the higher the stock-to-flow ratio, the higher the price of the asset. This model remains controversial among experts, especially for gauging short-term market sentiment. However, one look at Bitcoin's stock-to-flow chart leads many to believe the theory is worth further consideration.
+						This stock-to-flow model predicts that a higher the stock-to-flow ratio will result in a higher the price of the asset. This model remains controversial among experts, especially for gauging short-term market sentiment. However, one look at Bitcoin's stock-to-flow chart leads many to believe the theory is worth further consideration.
 					</p>
 					<p className="pt-8 text-center">
 						<a className="md:opacity-50 transition-opacity duration-500 hover:opacity-100" href="https://www.lookintobitcoin.com/charts/stock-to-flow-model/" target="_blank" rel="noreferrer"><img className="w-full max-w-lg inline" src="bitcoin-stock-to-flow-chart.png" alt="Bitcoin Stock to Flow Chart" /></a>
