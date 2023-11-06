@@ -9,6 +9,7 @@ import './App.scss';
 const CKB_RPC_URL = 'https://rpc.ankr.com/nervos_ckb';	// The JSON RPC URL of the CKB Full Node to query.
 const EPOCHS_PER_HALVING = 8760;						// The number of epochs per halving. This should never change.
 const HOURS_PER_EPOCH = 4;								// The number of hours per epoch. This should never change.
+const HALVING_MESSAGE_HIDE_DELAY = 10 * 60 * 1000;		// The delay in milliseconds to continue to display the halving message after it occurs.
 const TICK_DELAY = 500;									// The delay in milliseconds to update the countdown.
 const REFRESH_DELAY = 11 * 1000;						// The delay in milliseconds to refresh the RPC data and update the current block and epoch.
 const FULL_REFRESH_DELAY = 5 * 60 * 1000;				// The delay in milliseconds to refresh all RPC data and update all current values and target values.
@@ -114,9 +115,10 @@ function renderCountdown(targetTime: number)
 	if(targetTime)
 	{
 		const timeRemaining = targetTime - Date.now();
+		const halvingMessageWindow = EPOCHS_PER_HALVING * HOURS_PER_EPOCH * 60 * 60 * 1000 - HALVING_MESSAGE_HIDE_DELAY;
 
-		// If there is still time remaining then display the countdown.
-		if(timeRemaining > 0)
+		// If there is still time remaining then display the countdown, unless it is immediately after the halving within the hide delay window.
+		if(timeRemaining > 0 && timeRemaining < halvingMessageWindow)
 		{
 			const timeValues = calculateTimeValues(timeRemaining);
 			const html =
@@ -131,7 +133,7 @@ function renderCountdown(targetTime: number)
 			);
 			return html;
 		}
-		// If the time has passed, display a message instead of a time.
+		// Display a halving message instead of a time.
 		else
 		{
 			const html = <div id="countdown" className="text-4xl leading-[1.5em] md:text-6xl md:leading-[1.5em]">🎈Happy Halving!🎈<br />🎉🍾🎉🍾🎉</div>;
