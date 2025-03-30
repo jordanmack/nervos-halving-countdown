@@ -6,7 +6,7 @@ import './App.scss';
 /**
  * Constants
  */
-const CKB_RPC_URL = 'https://rpc.ankr.com/nervos_ckb';	// The JSON RPC URL of the CKB Full Node to query.
+const CKB_RPC_URL = 'https://rpc.ankr.com/nervos_ckb/efc49fb99eb7ca93a07557e97c0900f236f88d9c49a5f169f8f9c6963ed42f99';	// The JSON RPC URL of the CKB Full Node to query.
 const EPOCHS_PER_HALVING = 8760;						// The number of epochs per halving. This should never change.
 const HOURS_PER_EPOCH = 4;								// The number of hours per epoch. This should never change.
 const HALVING_MESSAGE_HIDE_DELAY = 10 * 60 * 1000;		// The delay in milliseconds to continue to display the halving message after it occurs.
