@@ -1,6 +1,6 @@
 {
   "name": "nervos-halving-countdown",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": true,
   "dependencies": {
     "react": "^19.3.1",
