@@ -1,8 +1,13 @@
 version: 2.1
-orbs:
-  node: circleci/node@5.1.0
+jobs:
+  build:
+    docker:
+      - image: oven/bun:1.4.4
+    steps:
+      - checkout
+      - run: ionice -c3 nice -n19 bun install --frozen-lockfile
+      - run: ionice -c3 nice -n19 bun run --bun build
 workflows:
   build:
     jobs:
-      - node/run:
-          npm-run: build
+      - build

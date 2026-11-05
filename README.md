@@ -19,11 +19,11 @@ These instructions describe how to develop, build, and deploy the code base for 
 If you don't need to develop and just want to view the live version, visit [NervosHalving.com](https://nervoshalving.com/).
 
 ### Technology Stack
-- Node.js (LTS v18+)
-- TypeScript (v4.9+)
-- React (v18+ via CRA v5+)
-- SASS (v1.58+)
-- Tailwind (v3.2+)
+
+- Bun for dependency management (version in `package.json`).
+- Node.js for build tools (supported versions in `package.json`).
+- React, TypeScript, Vite, and Tailwind CSS.
+- Exact dependency versions are recorded in `bun.lock`.
 
 ### Development Server
 
@@ -32,19 +32,40 @@ The following commands will run a local development server on port `3000`.
 ```sh
 git clone --depth=1 https://github.com/jordanmack/nervos-halving-countdown.git
 cd nervos-halving-countdown
-npm i
-npm start
+ionice -c3 nice -n19 bun install --frozen-lockfile
+ionice -c3 nice -n19 bun run start
 ```
 
 ### Building and Deploying
 
-The compiled version of this code is completely static and can be hosted on a basic web server. No backend daemons or processes are needed. 
+The compiled version of this code is completely static and can be hosted on a basic web server. No backend daemons or processes are needed.
 
 The following commands will build the production-ready files for deployment. After building, copy all files from the `build` folder to the root of your web server.
 
 ```sh
 git clone --depth=1 https://github.com/jordanmack/nervos-halving-countdown.git
 cd nervos-halving-countdown
-npm i
-npm run build
+ionice -c3 nice -n19 bun install --frozen-lockfile
+ionice -c3 nice -n19 bun run build
 ```
+
+`bun run build` checks TypeScript and creates the static site in `build/`.
+
+The production Nginx host and document root are defined in the infrastructure repository:
+
+- `~/ansible/inventory/hosts`
+- `~/ansible/inventory/host_vars/s10.parhelic.com/main.yml`, in the `nervoshalving.com` server block.
+
+To deploy, confirm the SSH host identity, back up the current document root outside the public directory, upload the assets first, and replace `index.html` last. Keep previous hashed assets so open browser sessions can finish loading. Nginx can serve the new files without a restart. Check the live countdown and block refresh after deployment.
+
+The RPC URL is set in `src/App.tsx`. Public mainnet endpoints are listed in the [Nervos CKB Networks documentation](https://docs.nervos.org/docs/getting-started/blockchain-networks). An RPC change requires a rebuild.
+
+### Updating Dependencies
+
+```sh
+ionice -c3 nice -n19 bun update --latest
+ionice -c3 nice -n19 bun run build
+bun audit
+```
+
+Review major-version changes and check the countdown in desktop and mobile browsers before deploying.

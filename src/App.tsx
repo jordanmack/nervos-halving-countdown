@@ -1,8 +1,6 @@
 import {useEffect, useState} from 'react';
 import useInterval from 'react-useinterval';
 
-import './App.scss';
-
 /**
  * Constants
  */
